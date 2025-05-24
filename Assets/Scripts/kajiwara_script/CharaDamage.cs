@@ -7,7 +7,9 @@ public class hpReduce : MonoBehaviour
     void OnTriggerEnter(Collider col){
         if(col.gameObject.tag == "playerAttack"){
             hp -= 10; 
+            hp = Mathf.Max(hp, 0); // 0未満にならないように制限
             Debug.Log("プレイヤーの攻撃、10のダメージ。残りHP: " + hp);
+            CarDataManager.Instance.SetHP(gameObject.name, hp);
         }
     }
 
