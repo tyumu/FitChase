@@ -12,7 +12,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
@@ -37,13 +37,6 @@ public class NewMonoBehaviourScript : MonoBehaviour
                 attackCollider.enabled = false;
                 attackTime = 0.0f;
             }
-        }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.tag == "Enemy"){
-            Destroy(other.gameObject);
         }
     }
 }
