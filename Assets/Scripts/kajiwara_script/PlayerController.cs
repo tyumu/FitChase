@@ -39,11 +39,4 @@ public class NewMonoBehaviourScript : MonoBehaviour
             }
         }
     }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.tag == "Enemy"){
-            Destroy(other.gameObject);
-        }
-    }
 }
